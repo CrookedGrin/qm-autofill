@@ -15,3 +15,11 @@ This script will run on QueryManager.com using the [TamperMonkey](https://www.ta
 1. If you want to update your saved fields, hit "Save" again at any point.
 *WARNING*: _Hitting "Save" will the **overwrite** your stored entries with what's currently in the form_.
 1. The next time you load QueryManager.com, you can hit "Fill" to apply the stored data.
+
+## Notes
+
+- Each QueryManager form is configured slightly differently, depending on how the agent set it up. Some fields might look the same, but actually have a slightly different name / id for different agents. For example, one form might have a `sample_pages` field and another might have a `sample_chapters` field. This script just matches an exact field ID, so you might have to populate the same thing again. But the storage is additive, so the next time you encounter that field, the script will be able to populate it.
+- If you want to see the data the script is saving, you can see it by opening [your browser's Inspector panel](https://blog.hubspot.com/website/how-to-inspect), going to the `Application` pane, and looking under `localStorage`. Once you've saved, you'll see an entry there for `https://querymanager.com`, with a table of the stored values. You can clear the data from there, but you won't be able to restore it, so be careful.
+- If you're logging into QueryTracker, be aware that this script will save your QT password unencrypted in `localStorage`. If enough people complain about that, I may add an option to disable or encrypt it.
+- Formatting in QueryManager is weird. I've done my best to preserve it, but your mileage may vary. Check your work!
+- Make sure you've followed the agent's instructions and checked whether anything is different from the last form you submitted.
