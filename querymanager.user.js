@@ -51,7 +51,10 @@
         for (var key in localStorage) {
             if (key.includes("field-")) {
                 const id = key.replace("field-","");
-                document.getElementById(id).value = localStorage.getItem(key);
+                const field = document.getElementById(id);
+                if (field) {
+                    field.value = localStorage.getItem(key);
+                }
             }
             if (key.includes("ed-")) {
                 const id = key.replace("ed-","");
